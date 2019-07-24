@@ -35,17 +35,21 @@ export default {
   modules: [
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',
-    'axios',
-    'proxy'
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
   axios: {
     // baseURL: 'http://localhost:3000',
-    proxyHeaders: false,
-    credentials: false,
+    // proxyHeaders: false,
+    // credentials: false,
     proxy: true,
   },
   proxy: {
-    '/api': 'http://localhost:3000'
+    '/api': {
+      target: 'http://localhost:3000',
+      pathRewrite: {'^/api/': ''},
+      changeOrigin: true
+    }
   },
   /*
   ** Build configuration

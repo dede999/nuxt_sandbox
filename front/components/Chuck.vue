@@ -6,7 +6,7 @@
               {{ phrase }}
             </h1>
             <h2 class="subtitle">
-              Uma frase some o mito Chuck Norris
+              A line about the myth Chuck Norris
             </h2>
         </div>
       </div>
@@ -21,8 +21,12 @@ export default {
         }
     },
     beforeMount: function () {
-        const line = $axios.$get('api/chuck_fact')
-        this.phrase = line
+        this.$axios.get('api/chuck_fact').then(r =>{
+          this.phrase = r.data.fact
+        }).catch(e =>{
+          console.log(e)
+        });
+        // this.phrase = line
     }
 }
 </script>
