@@ -11,8 +11,9 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_axios_a5bfd58c from 'nuxt_plugin_axios_a5bfd58c' // Source: ./axios.js (mode: 'all')
-import nuxt_plugin_buefy_6eff148b from 'nuxt_plugin_buefy_6eff148b' // Source: ./buefy.js (mode: 'all')
+import nuxt_plugin_axios_3ae7b48a from 'nuxt_plugin_axios_3ae7b48a' // Source: .\\axios.js (mode: 'all')
+import nuxt_plugin_toast_07180139 from 'nuxt_plugin_toast_07180139' // Source: .\\toast.js (mode: 'client')
+import nuxt_plugin_buefy_0672984a from 'nuxt_plugin_buefy_0672984a' // Source: .\\buefy.js (mode: 'all')
 
 // Component: <NoSsr>
 Vue.component(NoSsr.name, NoSsr)
@@ -152,12 +153,16 @@ async function createApp(ssrContext) {
 
   // Plugin execution
 
-  if (typeof nuxt_plugin_axios_a5bfd58c === 'function') {
-    await nuxt_plugin_axios_a5bfd58c(app.context, inject)
+  if (typeof nuxt_plugin_axios_3ae7b48a === 'function') {
+    await nuxt_plugin_axios_3ae7b48a(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_buefy_6eff148b === 'function') {
-    await nuxt_plugin_buefy_6eff148b(app.context, inject)
+  if (process.client && typeof nuxt_plugin_toast_07180139 === 'function') {
+    await nuxt_plugin_toast_07180139(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_buefy_0672984a === 'function') {
+    await nuxt_plugin_buefy_0672984a(app.context, inject)
   }
 
   // If server-side, wait for async component to be resolved first

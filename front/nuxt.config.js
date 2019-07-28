@@ -35,9 +35,22 @@ export default {
   modules: [
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',
+    '@nuxtjs/toast',
     '@nuxtjs/axios',
     '@nuxtjs/proxy'
   ],
+  toast: {
+    position: 'top-center',
+    register: [ // Register custom toasts
+      {
+        name: 'my-error',
+        message: 'Oops...Something went wrong',
+        options: {
+          type: 'error'
+        }
+      }
+    ]
+  },
   axios: {
     // baseURL: 'http://localhost:3000',
     // proxyHeaders: false,
