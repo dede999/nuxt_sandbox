@@ -12,7 +12,7 @@
       </a>
     </h3>
     <div class="columns is-multiline">
-      <div v-for="app in applications" 
+      <div v-for="app in data"
         :key=app.id class="column is-one-third">
         <div class="card">
           <div class="card-header">
@@ -44,6 +44,9 @@
 import Projects from '~/components/Projects'
 
 export default {
+  data:()=>{
+    data:[]
+  },
   components: {
     Projects
   },
@@ -61,6 +64,16 @@ export default {
       this.$store.dispatch('projects/delete_a_project', proj_id)
     }
   },
+  mounted(){
+    this.data = this.applications;
+  },
+  watch:{
+    'applications'(val){
+      if( val ){
+        this.data = val;
+      }
+    }
+  }
 }
 </script>
 

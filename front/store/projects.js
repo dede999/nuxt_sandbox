@@ -11,7 +11,7 @@ export const actions = {
                 commit('all_projects', r.data)
             }).catch(e => {
                 console.log(e)
-            });   
+            });
     },
     async delete_a_project({commit}, id) {
         await this.$axios.delete('api/applications/' + id)
@@ -19,10 +19,10 @@ export const actions = {
                 let msg = 'Element ' + id + ' was destroyed'
                 this.$toast.open({
                   message: msg, type: 'is-success', duration: 1000
-                })
+                });
                 commit('destroy_project', id)
             }).catch(e => {
-                console.log(e)
+                console.log(e);
                 this.$toast.open({
                     message: 'This has gone wrong', type: 'is-danger', duration: 1000
                 })
