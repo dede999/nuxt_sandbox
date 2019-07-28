@@ -2,7 +2,7 @@
   <section class="section">
     <chuck/>
 
-    <div class="columns is-mobile">
+    <div class="columns is-mobile is-multiline">
       <card
         title="Free"
         icon="github-circle"
@@ -39,6 +39,13 @@
         No other internal dependency
       </card>
     </div>
+    <div class="column">
+      <input type="file" id="file" ref="file" v-on:change="handleFileUpload()"/>
+      <button v-on:click="submitFile()">Submit</button>
+    </div>
+    <div class="column">
+      You are uploading this: {{ file }}
+    </div>
   </section>
 </template>
 
@@ -52,7 +59,18 @@ export default {
   components: {
     Card,
     Chuck
-  }
+  },
+  data() {
+    return {
+      file: ''
+    }
+  },
+  methods: {
+    handleFileUpload(){
+      console.log(this.$refs.file.files)
+      this.file = this.$refs.file.files[0];
+    }
+  },
 }
 </script>
 

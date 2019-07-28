@@ -2697,3 +2697,237 @@ Processing by MessageController#chuck as HTML
 Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/chuck_fact" for 127.0.0.1 at 2019-07-27 12:31:06 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/lenovo/.rvm/gems/ruby-2.6.2/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by MessageController#chuck as HTML
+Completed 200 OK in 175ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chuck_fact" for 127.0.0.1 at 2019-07-27 12:54:00 -0300
+Processing by MessageController#chuck as HTML
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chuck_fact" for 127.0.0.1 at 2019-07-27 12:57:48 -0300
+Processing by MessageController#chuck as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chuck_fact" for 127.0.0.1 at 2019-07-27 13:00:41 -0300
+Processing by MessageController#chuck as HTML
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chuck_fact" for 127.0.0.1 at 2019-07-27 13:02:23 -0300
+Processing by MessageController#chuck as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chuck_fact" for 127.0.0.1 at 2019-07-27 13:11:35 -0300
+Processing by MessageController#chuck as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/applications" for 127.0.0.1 at 2019-07-27 13:12:11 -0300
+Processing by ApplicationsController#index as HTML
+  [1m[36mApplication Load (1.4ms)[0m  [1m[34mSELECT "applications".* FROM "applications"[0m
+  ↳ app/controllers/applications_controller.rb:8
+Completed 200 OK in 56ms (Views: 45.6ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/chuck_fact" for 127.0.0.1 at 2019-07-27 13:12:16 -0300
+Processing by MessageController#chuck as HTML
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chuck_fact" for 127.0.0.1 at 2019-07-27 14:05:12 -0300
+Processing by MessageController#chuck as HTML
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chuck_fact" for 127.0.0.1 at 2019-07-27 14:05:15 -0300
+Processing by MessageController#chuck as HTML
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chuck_fact" for 127.0.0.1 at 2019-07-27 14:06:03 -0300
+Processing by MessageController#chuck as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/applications" for 127.0.0.1 at 2019-07-28 17:42:09 -0300
+Processing by ApplicationsController#index as HTML
+  [1m[36mApplication Load (0.8ms)[0m  [1m[34mSELECT "applications".* FROM "applications"[0m
+  ↳ app/controllers/applications_controller.rb:8
+Completed 200 OK in 19ms (Views: 17.1ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/applications/109" for 127.0.0.1 at 2019-07-28 17:42:13 -0300
+Processing by ApplicationsController#destroy as HTML
+  Parameters: {"id"=>"109"}
+  [1m[36mApplication Load (24.5ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = ? LIMIT ?[0m  [["id", 109], ["LIMIT", 1]]
+  ↳ app/controllers/applications_controller.rb:44
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/applications_controller.rb:38
+  [1m[36mApplication Destroy (0.6ms)[0m  [1m[31mDELETE FROM "applications" WHERE "applications"."id" = ?[0m  [["id", 109]]
+  ↳ app/controllers/applications_controller.rb:38
+  [1m[35m (16.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/applications_controller.rb:38
+Completed 204 No Content in 176ms (ActiveRecord: 41.2ms)
+
+
+Started GET "/applications" for 127.0.0.1 at 2019-07-28 17:42:18 -0300
+Processing by ApplicationsController#index as HTML
+  [1m[36mApplication Load (0.5ms)[0m  [1m[34mSELECT "applications".* FROM "applications"[0m
+  ↳ app/controllers/applications_controller.rb:8
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/applications/114" for 127.0.0.1 at 2019-07-28 17:42:24 -0300
+Processing by ApplicationsController#destroy as HTML
+  Parameters: {"id"=>"114"}
+  [1m[36mApplication Load (0.4ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = ? LIMIT ?[0m  [["id", 114], ["LIMIT", 1]]
+  ↳ app/controllers/applications_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/applications_controller.rb:38
+  [1m[36mApplication Destroy (0.4ms)[0m  [1m[31mDELETE FROM "applications" WHERE "applications"."id" = ?[0m  [["id", 114]]
+  ↳ app/controllers/applications_controller.rb:38
+  [1m[35m (11.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/applications_controller.rb:38
+Completed 204 No Content in 18ms (ActiveRecord: 12.3ms)
+
+
+Started GET "/applications" for 127.0.0.1 at 2019-07-28 17:42:27 -0300
+Processing by ApplicationsController#index as HTML
+  [1m[36mApplication Load (0.1ms)[0m  [1m[34mSELECT "applications".* FROM "applications"[0m
+  ↳ app/controllers/applications_controller.rb:8
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/applications/113" for 127.0.0.1 at 2019-07-28 17:44:02 -0300
+Processing by ApplicationsController#destroy as HTML
+  Parameters: {"id"=>"113"}
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = ? LIMIT ?[0m  [["id", 113], ["LIMIT", 1]]
+  ↳ app/controllers/applications_controller.rb:44
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/applications_controller.rb:38
+  [1m[36mApplication Destroy (0.8ms)[0m  [1m[31mDELETE FROM "applications" WHERE "applications"."id" = ?[0m  [["id", 113]]
+  ↳ app/controllers/applications_controller.rb:38
+  [1m[35m (17.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/applications_controller.rb:38
+Completed 204 No Content in 27ms (ActiveRecord: 19.2ms)
+
+
+Started GET "/applications" for 127.0.0.1 at 2019-07-28 17:44:05 -0300
+Processing by ApplicationsController#index as HTML
+  [1m[36mApplication Load (0.2ms)[0m  [1m[34mSELECT "applications".* FROM "applications"[0m
+  ↳ app/controllers/applications_controller.rb:8
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/applications/116" for 127.0.0.1 at 2019-07-28 17:44:53 -0300
+Processing by ApplicationsController#destroy as HTML
+  Parameters: {"id"=>"116"}
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = ? LIMIT ?[0m  [["id", 116], ["LIMIT", 1]]
+  ↳ app/controllers/applications_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/applications_controller.rb:38
+  [1m[36mApplication Destroy (4.2ms)[0m  [1m[31mDELETE FROM "applications" WHERE "applications"."id" = ?[0m  [["id", 116]]
+  ↳ app/controllers/applications_controller.rb:38
+  [1m[35m (14.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/applications_controller.rb:38
+Completed 204 No Content in 37ms (ActiveRecord: 19.5ms)
+
+
+Started GET "/applications" for 127.0.0.1 at 2019-07-28 17:45:25 -0300
+Processing by ApplicationsController#index as HTML
+  [1m[36mApplication Load (0.1ms)[0m  [1m[34mSELECT "applications".* FROM "applications"[0m
+  ↳ app/controllers/applications_controller.rb:8
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/applications/118" for 127.0.0.1 at 2019-07-28 17:45:27 -0300
+Processing by ApplicationsController#destroy as HTML
+  Parameters: {"id"=>"118"}
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = ? LIMIT ?[0m  [["id", 118], ["LIMIT", 1]]
+  ↳ app/controllers/applications_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/applications_controller.rb:38
+  [1m[36mApplication Destroy (0.5ms)[0m  [1m[31mDELETE FROM "applications" WHERE "applications"."id" = ?[0m  [["id", 118]]
+  ↳ app/controllers/applications_controller.rb:38
+  [1m[35m (15.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/applications_controller.rb:38
+Completed 204 No Content in 23ms (ActiveRecord: 16.1ms)
+
+
+Started GET "/applications" for 127.0.0.1 at 2019-07-28 17:49:11 -0300
+Processing by ApplicationsController#index as HTML
+  [1m[36mApplication Load (0.2ms)[0m  [1m[34mSELECT "applications".* FROM "applications"[0m
+  ↳ app/controllers/applications_controller.rb:8
+Completed 200 OK in 9ms (Views: 9.0ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/applications/117" for 127.0.0.1 at 2019-07-28 17:49:13 -0300
+Processing by ApplicationsController#destroy as HTML
+  Parameters: {"id"=>"117"}
+  [1m[36mApplication Load (0.4ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = ? LIMIT ?[0m  [["id", 117], ["LIMIT", 1]]
+  ↳ app/controllers/applications_controller.rb:44
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/applications_controller.rb:38
+  [1m[36mApplication Destroy (0.7ms)[0m  [1m[31mDELETE FROM "applications" WHERE "applications"."id" = ?[0m  [["id", 117]]
+  ↳ app/controllers/applications_controller.rb:38
+  [1m[35m (13.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/applications_controller.rb:38
+Completed 204 No Content in 32ms (ActiveRecord: 14.7ms)
+
+
+Started DELETE "/applications/127" for 127.0.0.1 at 2019-07-28 17:51:10 -0300
+Processing by ApplicationsController#destroy as HTML
+  Parameters: {"id"=>"127"}
+  [1m[36mApplication Load (0.4ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = ? LIMIT ?[0m  [["id", 127], ["LIMIT", 1]]
+  ↳ app/controllers/applications_controller.rb:44
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/applications_controller.rb:38
+  [1m[36mApplication Destroy (0.9ms)[0m  [1m[31mDELETE FROM "applications" WHERE "applications"."id" = ?[0m  [["id", 127]]
+  ↳ app/controllers/applications_controller.rb:38
+  [1m[35m (21.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/applications_controller.rb:38
+Completed 204 No Content in 32ms (ActiveRecord: 23.0ms)
+
+
+Started GET "/applications" for 127.0.0.1 at 2019-07-28 17:51:12 -0300
+Processing by ApplicationsController#index as HTML
+  [1m[36mApplication Load (0.1ms)[0m  [1m[34mSELECT "applications".* FROM "applications"[0m
+  ↳ app/controllers/applications_controller.rb:8
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/applications/128" for 127.0.0.1 at 2019-07-28 17:51:15 -0300
+Processing by ApplicationsController#destroy as HTML
+  Parameters: {"id"=>"128"}
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = ? LIMIT ?[0m  [["id", 128], ["LIMIT", 1]]
+  ↳ app/controllers/applications_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/applications_controller.rb:38
+  [1m[36mApplication Destroy (0.5ms)[0m  [1m[31mDELETE FROM "applications" WHERE "applications"."id" = ?[0m  [["id", 128]]
+  ↳ app/controllers/applications_controller.rb:38
+  [1m[35m (13.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/applications_controller.rb:38
+Completed 204 No Content in 23ms (ActiveRecord: 14.5ms)
+
+
+Started DELETE "/applications/126" for 127.0.0.1 at 2019-07-28 17:51:19 -0300
+Processing by ApplicationsController#destroy as HTML
+  Parameters: {"id"=>"126"}
+  [1m[36mApplication Load (0.4ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = ? LIMIT ?[0m  [["id", 126], ["LIMIT", 1]]
+  ↳ app/controllers/applications_controller.rb:44
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/applications_controller.rb:38
+  [1m[36mApplication Destroy (1.0ms)[0m  [1m[31mDELETE FROM "applications" WHERE "applications"."id" = ?[0m  [["id", 126]]
+  ↳ app/controllers/applications_controller.rb:38
+  [1m[35m (12.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/applications_controller.rb:38
+Completed 204 No Content in 22ms (ActiveRecord: 13.8ms)
+
+
