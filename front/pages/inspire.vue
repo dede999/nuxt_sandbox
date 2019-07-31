@@ -3,8 +3,7 @@
     <h2 class="title is-3 has-text-grey">
       "Just start  <b-icon
         icon="rocket"
-        size="is-large"
-      />"
+        size="is-large"/>"
     </h2>
     <h3 class="subtitle is-6 has-text-grey">
       Author: <a href="https://github.com/anteriovieira">
@@ -31,11 +30,19 @@
               <span> Edit </span>
             </div>
             <div class="card-footer-item" id="delete">
-              <span @click="delete_project(app.id)"> Delete </span>
+              <span @click="delete_project(app)"> Delete </span>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <div>
+      <b-button
+        type="is-primary"
+        outlined
+        v-for="n in num" :key="n"
+        @click="crop_number(n)"
+      > {{ n }} </b-button>
     </div>
   </section>
 </template>
@@ -44,8 +51,11 @@
 import Projects from '~/components/Projects'
 
 export default {
-  data:()=>{
-    data:[]
+  data() {
+    return {
+      data:[],
+      num: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+    }
   },
   components: {
     Projects
@@ -60,12 +70,17 @@ export default {
     }
   },
   methods: {
-    delete_project: function(proj_id) {
-      this.$store.dispatch('projects/delete_a_project', proj_id)
+    delete_project: function(project) {
+      this.$store.dispatch('projects/delete_a_project', project.id);
+      this.data = this.$pop_an_item(this.data, project)
+    },
+    crop_number: function (number) {
+      this.num = this.$pop_an_item(this.num, number)
     }
   },
-  mounted(){
+  beforeMount(){
     this.data = this.applications;
+    console.log(this.data)
   },
   watch:{
     'applications'(val){
