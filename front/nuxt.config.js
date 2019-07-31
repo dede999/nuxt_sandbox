@@ -39,6 +39,10 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/proxy'
   ],
+
+  /*
+  Setting the position and show method of toast dialog.
+   */
   toast: {
     position: 'top-center',
     register: [ // Register custom toasts
