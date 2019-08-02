@@ -3,7 +3,7 @@
     <h2 class="title is-3 has-text-grey">
       "Just start  <b-icon
         icon="rocket"
-        size="is-large"/>"
+        size="is-large"></b-icon>"
     </h2>
     <h3 class="subtitle is-6 has-text-grey">
       Author: <a href="https://github.com/anteriovieira">
@@ -29,8 +29,8 @@
             <div class="card-footer-item" id="edit">
               <span> Edit </span>
             </div>
-            <div class="card-footer-item" id="delete">
-              <span @click="delete_project(app)"> Delete </span>
+            <div @click="delete_project(app)" class="card-footer-item" id="delete">
+              <span> Delete </span>
             </div>
           </div>
         </div>
@@ -38,8 +38,8 @@
     </div>
     <div>
       <b-button
-        type="is-primary"
-        outlined
+        type="is-success"
+        rounded
         v-for="n in num" :key="n"
         @click="crop_number(n)"
       > {{ n }} </b-button>
