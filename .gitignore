@@ -1,5 +1,5 @@
 .idea/
 .vscode/
 back/tmp/
-back/log
+back/log/
 front/node_modules/

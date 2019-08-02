@@ -6,7 +6,7 @@
               {{ phrase }}
             </h1>
             <h2 class="subtitle">
-              A line about the myth Chuck Norris
+              A line on the myth Chuck Norris
             </h2>
         </div>
       </div>

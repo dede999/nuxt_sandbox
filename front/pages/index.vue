@@ -39,13 +39,29 @@
         No other internal dependency
       </card>
     </div>
-    <div class="column">
-      <input type="file" id="file" ref="file" v-on:change="handleFileUpload()"/>
-      <button v-on:click="submitFile()">Submit</button>
+    <div class="columns">
+      <div class="column">
+        <b-button type="is-dark"
+                  outlined rounded
+                  @click="paste_a_text"
+        > Paste from clipboard </b-button>
+      </div>
+      <div class="column">
+        <b-button type="is-warning"
+                  rounded
+                  @click="slicing"
+        > Slice text </b-button>
+      </div>
+      <div class="column">
+        Sliced text: <br>
+        <b-button type="is-danger" rounded
+                  v-for="word in word_array" :key="word"
+                  v-if="word !== ''"
+        > {{ word }} </b-button>
+      </div>
     </div>
-    <div class="column">
-      You are uploading this: {{ file }}
-    </div>
+    <b-button @click="check" :type="but" rounded outline> Typeof: {{ tipo }} </b-button>
+<!--    <div :class="check"> LOL </div>-->
   </section>
 </template>
 
@@ -62,15 +78,44 @@ export default {
   },
   data() {
     return {
-      file: ''
+      my_text: '',
+      word_array: [],
+      but: 'is-primary',
+      tipo: ''
     }
   },
   methods: {
-    handleFileUpload(){
-      console.log(this.$refs.file.files)
-      this.file = this.$refs.file.files[0];
+    paste_a_text: function () {
+      navigator.clipboard.readText()
+        .then(text => {
+          this.my_text = text
+        }).catch(error => {
+          console.log(error)
+      });
+    },
+    slicing: function () {
+      this.word_array = this.my_text.split(/\./)
+    },
+    check: function () {
+      let stuff = event.target;
+      if(typeof stuff === 'undefined'){
+        this.but = 'is-danger'
+      } else {
+        this.but = 'is-success'
+      }
+      this.tipo = typeof stuff;
+      console.log(stuff)
     }
   },
+  watch: {
+    'my_text'() {
+      console.log(this.my_text)
+    }
+  }
+  // handleFileUpload(){
+  // console.log(this.$refs.file.files)
+  // this.file = this.$refs.file.files[0];
+  // },
 }
 </script>
 

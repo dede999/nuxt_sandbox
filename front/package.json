@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.5.4",
+    "@nuxtjs/toast": "^3.2.1",
     "nuxt": "^2.0.0",
     "nuxt-buefy": "^0.3.2",
     "proxy": "^0.2.4"
