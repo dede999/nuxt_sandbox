@@ -3,9 +3,12 @@
     <h2 class="title is-3 has-text-grey">
       "Just start  <b-icon
         icon="rocket"
-        size="is-large"
-      />"
+        size="is-large"></b-icon>"
     </h2>
+    <b-button type="is-primary" class="is-pulled-right is-large"
+              @click="create_activate = true" rounded>
+      Create
+    </b-button>
     <h3 class="subtitle is-6 has-text-grey">
       Author: <a href="https://github.com/anteriovieira">
         Antério Vieira
@@ -17,8 +20,9 @@
         <div class="card">
           <div class="card-header">
             <p class="card-header-title">
-              {{ app.name }} <span style="font-size: small"> {{ app.id }} </span>
+              {{ app.name }}
             </p>
+            <span class="is-pulled-right"> {{ app.id }} </span>
           </div>
           <div class="card-content">
             <div class="content">
@@ -27,16 +31,22 @@
             </div>
           </div>
           <div class="card-footer">
-            <div class="card-footer-item" id="edit">
+            <div @click="edit_app(app)" class="card-footer-item" id="edit">
               <span> Edit </span>
             </div>
-            <div class="card-footer-item" id="delete">
-              <span @click="delete_project(app.id)"> Delete </span>
+            <div @click="delete_project(app)" class="card-footer-item" id="delete">
+              <span> Delete </span>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <b-modal :active.sync="modal_activate" has-modal-card>
+      <projects v-bind="an_app"/>
+    </b-modal>
+    <b-modal :active.sync="create_activate" has-modal-card>
+      <projects/>
+    </b-modal>
   </section>
 </template>
 
@@ -44,8 +54,18 @@
 import Projects from '~/components/Projects'
 
 export default {
-  data:()=>{
-    data:[]
+  data() {
+    return {
+      data:[],
+      an_app: {
+        id: -1,
+        name: '',
+        author: '',
+        version: ''
+      },
+      modal_activate: false,
+      create_activate: false
+    }
   },
   components: {
     Projects
@@ -60,12 +80,18 @@ export default {
     }
   },
   methods: {
-    delete_project: function(proj_id) {
-      this.$store.dispatch('projects/delete_a_project', proj_id)
+    delete_project: function(project) {
+      this.$store.dispatch('projects/delete_a_project', project.id);
+      this.data = this.$pop_an_item(this.data, project)
+    },
+    edit_app: function (app) {
+      this.an_app = app;
+      this.modal_activate = true
     }
   },
-  mounted(){
+  beforeMount(){
     this.data = this.applications;
+    console.log(this.data)
   },
   watch:{
     'applications'(val){
