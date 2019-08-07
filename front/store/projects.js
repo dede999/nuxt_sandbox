@@ -25,6 +25,18 @@ export const actions = {
                   type: "is-danger", duration: 1000
                 })
             });
+    },
+    async update_a_project({commit}, params) {
+      await this.$axios.put('api/applications/' + params.id, params)
+        .then(r => {
+          console.log(r.data);
+        }).catch(err => console.log(err));
+    },
+    async create_a_project({commit}, params) {
+      await this.$axios.post('api/applications', params)
+        .then(r => {
+          commit('new_project', r.data)
+        }).catch(err => console.log(err));
     }
 };
 
