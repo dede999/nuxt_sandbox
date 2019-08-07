@@ -86,7 +86,7 @@ export default {
     },
     edit_app: function (app) {
       this.an_app = app;
-      this.modal_activate = true
+      this.modal_activate = true;
     }
   },
   beforeMount(){
