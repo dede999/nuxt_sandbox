@@ -12,12 +12,12 @@
         <b-field label="ID" v-if="id > 0">
           <b-input
             type="number" :value="id"
-            disabled rounded></b-input>
+            disabled rounded> </b-input>
         </b-field>
         <b-field label="Project Name">
           <b-input
             placeholder="The name of the project" v-model="app.name"
-            required rounded></b-input>
+            required rounded> </b-input>
         </b-field>
         <b-field label="Author">
           <b-input
